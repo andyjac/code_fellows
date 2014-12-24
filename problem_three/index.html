@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="account">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+  </head>
+  <body ng-controller="AccountController as account">
+    <h1>Account Users</h1>
+    <div ng-repeat="user in account.users">
+       <blockquote>
+        <b>First Name:</b> {{user.firstName}}<br>
+        <b>Last Name:</b> {{user.lastName}}<br>
+        <b>Email:</b> {{user.email}}
+      </blockquote>
+    </div>
+    <form name="newUserForm" ng-submit="newUserForm.$valid && account.addUser(user)" novalidate>
+      <blockquote>
+        <b>First Name:</b> {{account.user.firstName}}<br>
+        <b>Last Name:</b> {{account.user.lastName}}<br>
+        <b>Email:</b> {{account.user.email}}
+      </blockquote>
+      <label>First Name:</label>
+      <input ng-model="account.user.firstName" type="text" required/>
+      <label>Last Name:</label>
+      <input ng-model="account.user.lastName" type="text"/>
+      <label>Email:</label>
+      <input ng-model="account.user.email" type="email"/>
+      <input type="submit" value="Add"/>
+    </form>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
