@@ -2,8 +2,6 @@
   var app = angular.module('account', []);
 
   app.controller('AccountController', ['$scope', function($scope) {
-    this.users = userList;
-    $scope.test = 'this is a test';
     $scope.users = userList;
 
     $scope.addUser = function(user) {
