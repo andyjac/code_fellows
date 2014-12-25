@@ -13,19 +13,18 @@
         <a class="btn" ng-click="removeUser(user)">Remove User</a>
       </blockquote>
     </div>
+    <h3>New User</h3>
     <form name="newUserForm" ng-submit="newUserForm.$valid && addUser(user)" novalidate>
       <blockquote>
         <b>First Name:</b> {{user.firstName}}<br>
         <b>Last Name:</b> {{user.lastName}}<br>
         <b>Email:</b> {{user.email}}
       </blockquote>
-      <label>First Name:</label>
-      <input ng-model="user.firstName" type="text" required/>
-      <label>Last Name:</label>
-      <input ng-model="user.lastName" type="text"/>
-      <label>Email:</label>
-      <input ng-model="user.email" type="email"/>
-      <input type="submit" value="Add"/>
+      <label>*required</label>
+      <input ng-model="user.firstName" type="text" placeholder="first name" required/>
+      <input ng-model="user.lastName" type="text" placeholder="last name"/>
+      <input ng-model="user.email" type="email" placeholder="email"/>
+      <input type="submit" value="Add User"/>
     </form>
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
