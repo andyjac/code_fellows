@@ -10,7 +10,9 @@
     };
 
     $scope.removeUser = function(user) {
-      var index = $scope.users.indexOf($scope.user);
+      var index = $scope.users.indexOf(user);
+      console.log(index);
+      console.log(user);
       $scope.users.splice(index, 1);
     };
   }]);
