@@ -11,8 +11,8 @@
         <b>First Name:</b> {{user.firstName}}<br>
         <b>Last Name:</b> {{user.lastName}}<br>
         <b>Email:</b> {{user.email}}<br>
-        <a class="btn" ng-click="editing = true">Edit</a>
-        <a class="btn" ng-click="removeUser(user)">Delete</a>
+        <a class="edit btn" ng-click="editing = true">Edit</a>
+        <a class="remove btn" ng-click="removeUser(user)">Delete</a>
         <form class="updateUser" name="updateUser" ng-show="editing" ng-submit="editing = false">
           <input ng-model="user.firstName" type="text" placeholder="First Name" required/><br>
           <input ng-model="user.lastName" type="text" placeholder="Last Name"/><br>
@@ -21,8 +21,8 @@
         </form>
       </blockquote>
     </div>
-    <h3>New User</h3>
-    <form name="newUser" ng-submit="newUser.$valid && addUser(user)" novalidate>
+    <a class="btn" ng-click="adding = true">New User</a>
+    <form class="newUser" name="newUser" ng-show="adding" ng-submit="newUser.$valid && addUser(user)" novalidate>
       <blockquote>
         <b>First Name:</b> {{user.firstName}}<br>
         <b>Last Name:</b> {{user.lastName}}<br>
