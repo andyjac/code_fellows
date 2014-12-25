@@ -1,14 +1,21 @@
 (function() {
   var app = angular.module('account', []);
 
-  app.controller('AccountController', function() {
+  app.controller('AccountController', ['$scope', function($scope) {
     this.users = userList;
+    $scope.test = 'this is a test';
+    $scope.users = userList;
 
-    this.addUser = function(user) {
-      userList.push(this.user);
-      this.user  = {};
+    $scope.addUser = function(user) {
+      $scope.users.push($scope.user);
+      $scope.user  = {};
     };
-  });
+
+    $scope.removeUser = function(user) {
+      var index = $scope.users.indexOf($scope.user);
+      $scope.users.splice(index, 1);
+    };
+  }]);
 
   var userList = [
     {
