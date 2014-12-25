@@ -3,10 +3,9 @@
 
   app.controller('AccountController', ['$scope', function($scope) {
     $scope.users = userList;
-
     $scope.addUser = function(user) {
-      $scope.users.push($scope.user);
-      $scope.user  = {};
+      $scope.users.push(user);
+      $scope.user = {};
     };
 
     $scope.removeUser = function(user) {
