@@ -19,14 +19,14 @@
   app.directive('userList', function() {
     return {
       restrict: 'E',
-      templateUrl: 'views/user_list.html'
+      templateUrl: 'user_list.html'
     };
   });
 
   app.directive('newUser', function() {
     return {
       restrict: 'E',
-      templateUrl: 'views/new_user.html'
+      templateUrl: 'new_user.html'
     };
   });
 
