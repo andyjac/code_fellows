@@ -1,0 +1,12 @@
+<a class="btn" ng-click="adding = true">New User</a>
+<form class="newUser" name="newUser" ng-show="adding" ng-submit="newUser.$valid && addUser(user)" novalidate>
+  <blockquote>
+    <b>First Name:</b> {{user.firstName}}<br>
+    <b>Last Name:</b> {{user.lastName}}<br>
+    <b>Email:</b> {{user.email}}
+  </blockquote>
+  <input ng-model="user.firstName" type="text" placeholder="First Name" required/><br>
+  <input ng-model="user.lastName" type="text" placeholder="Last Name"/><br>
+  <input ng-model="user.email" type="email" placeholder="Email"/><br>
+  <input type="submit" value="Add"/>
+</form>
