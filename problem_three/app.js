@@ -3,6 +3,7 @@
 
   app.controller('AccountController', ['$scope', function($scope) {
     $scope.users = userList;
+
     $scope.addUser = function(user) {
       $scope.adding = false;
       $scope.users.push(user);
@@ -15,16 +16,30 @@
     };
   }]);
 
+  app.directive('userList', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'user_list.html'
+    };
+  });
+
+  app.directive('newUser', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'new_user.html'
+    };
+  });
+
   var userList = [
     {
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john@domain.com'
+      firstName: 'Guy',
+      lastName: 'Person',
+      email: 'dude@domain.com'
     },
     {
-      firstName: 'Jane',
-      lastName: 'Doe',
-      email: 'jane@example.com'
+      firstName: 'Andrew',
+      lastName: 'Jacobson',
+      email: 'andrew@example.com'
     }
   ];
 })();

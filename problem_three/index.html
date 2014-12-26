@@ -7,32 +7,9 @@
   <body ng-controller="AccountController as account">
     <h1>Account Users</h1>
     <div ng-repeat="user in users" ng-show="users">
-      <blockquote>
-        <b>First Name:</b> {{user.firstName}}<br>
-        <b>Last Name:</b> {{user.lastName}}<br>
-        <b>Email:</b> {{user.email}}<br>
-        <a class="edit btn" ng-click="editing = true">Edit</a>
-        <a class="remove btn" ng-click="removeUser(user)">Delete</a>
-        <form class="updateUser" name="updateUser" ng-show="editing" ng-submit="editing = false">
-          <input ng-model="user.firstName" type="text" placeholder="First Name" required/><br>
-          <input ng-model="user.lastName" type="text" placeholder="Last Name"/><br>
-          <input ng-model="user.email" type="email" placeholder="Email"/><br>
-          <input type="submit" value="Save"/>
-        </form>
-      </blockquote>
+      <user-list></user-list>
     </div>
-    <a class="btn" ng-click="adding = true">New User</a>
-    <form class="newUser" name="newUser" ng-show="adding" ng-submit="newUser.$valid && addUser(user)" novalidate>
-      <blockquote>
-        <b>First Name:</b> {{user.firstName}}<br>
-        <b>Last Name:</b> {{user.lastName}}<br>
-        <b>Email:</b> {{user.email}}
-      </blockquote>
-      <input ng-model="user.firstName" type="text" placeholder="First Name" required/><br>
-      <input ng-model="user.lastName" type="text" placeholder="Last Name"/><br>
-      <input ng-model="user.email" type="email" placeholder="Email"/><br>
-      <input type="submit" value="Add"/>
-    </form>
+    <new-user></new-user>
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
