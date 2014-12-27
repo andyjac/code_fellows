@@ -16,17 +16,17 @@
     };
   }]);
 
-  app.directive('userList', function() {
+  app.directive('editUser', function() {
     return {
       restrict: 'E',
-      templateUrl: 'user_list.html'
+      templateUrl: 'edit_user.html'
     };
   });
 
-  app.directive('newUser', function() {
+  app.directive('addUser', function() {
     return {
       restrict: 'E',
-      templateUrl: 'new_user.html'
+      templateUrl: 'add_user.html'
     };
   });
 
