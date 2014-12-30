@@ -2,7 +2,7 @@
   var app = angular.module('account', []);
 
   app.controller('AccountController', ['$scope', function($scope) {
-    $scope.users = userList;
+    $scope.users = [];
 
     $scope.addUser = function(user) {
       $scope.addingUser = false;
@@ -29,17 +29,4 @@
       templateUrl: 'add_user.html'
     };
   });
-
-  var userList = [
-    {
-      firstName: 'Guy',
-      lastName: 'Person',
-      email: 'dude@domain.com'
-    },
-    {
-      firstName: 'Andrew',
-      lastName: 'Jacobson',
-      email: 'andrew@example.com'
-    }
-  ];
 })();
