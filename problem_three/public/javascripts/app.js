@@ -4,7 +4,6 @@
   app.controller('AccountController', ['$scope', function($scope) {
     $scope.users = userList;
 
-    console.log($scope.users);
     $scope.addUser = function(user) {
       $scope.addingUser = false;
       $scope.users.push(user);
