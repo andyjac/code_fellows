@@ -7,17 +7,18 @@
     <b>Email:</b> {{user.email}}
     <br>
     <div class="edit-user-buttons">
-      <a class="edit btn" ng-click="editingUser = true">Edit</a>
-      <a class="remove btn" ng-click="removeUser(user)">Delete</a>
+      <a class="edit btn" ng-click="beginEdit($index)">Edit</a>
+      <a class="remove btn" ng-click="removeUser($index)">Delete</a>
     </div>
   </div>
+  <form class="update-user" name="update" ng-show="editingUser">
+    <input ng-model="copy.firstName" type="text" placeholder="First Name" required/>
+    <br>
+    <input ng-model="copy.lastName" type="text" placeholder="Last Name"/>
+    <br>
+    <input ng-model="copy.email" type="email" placeholder="Email"/>
+    <br>
+    <button type="button" ng-click="commitEdit()">Save</button>
+    <button type="button" ng-click="cancelEdit()">Cancel</button>
+  </form>
 </div>
-<form class="update-user" name="update" ng-show="editingUser" ng-submit="editingUser = false">
-  <input ng-model="user.firstName" type="text" placeholder="First Name" required/>
-  <br>
-  <input ng-model="user.lastName" type="text" placeholder="Last Name"/>
-  <br>
-  <input ng-model="user.email" type="email" placeholder="Email"/>
-  <br>
-  <input type="submit" value="Save"/>
-</form>

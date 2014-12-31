@@ -6,13 +6,37 @@
 
     $scope.addUser = function(user) {
       $scope.addingUser = false;
-      $scope.users.push(user);
+      $scope.users.unshift(user);
       $scope.user = {};
     };
 
-    $scope.removeUser = function(user) {
-      var index = $scope.users.indexOf(user);
+    $scope.reset = function() {
+      $scope.addingUser = false;
+      $scope.user = {};
+    };
+
+    $scope.removeUser = function(index) {
       $scope.users.splice(index, 1);
+    };
+
+    $scope.beginEdit = function(index) {
+      $scope.editingUser = true;
+      console.log('value of index: ', index);
+      console.log('$scope.index before setting it to index: ', $scope.index);
+      $scope.index = index;
+      console.log('$scope.index after setting it to index: ', $scope.index);
+      $scope.copy = angular.copy($scope.users[index]);
+    };
+
+    $scope.commitEdit = function() {
+      $scope.users[$scope.index] = angular.copy($scope.copy);
+      $scope.cancelEdit();
+    };
+
+    $scope.cancelEdit = function() {
+      $scope.copy = null;
+      $scope.index = -1;
+      $scope.editingUser = false;
     };
   }]);
 

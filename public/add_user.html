@@ -9,13 +9,16 @@
       <b>Email:</b> {{user.email}}
     </div>
   </div>
-  <form class="new-user" name="newuser" ng-show="addingUser" ng-submit="newuser.$valid && addUser(user)" novalidate>
+  <form class="new-user" name="newuser" ng-show="addingUser" novalidate>
     <input ng-model="user.firstName" type="text" placeholder="First Name" required/>
     <br>
     <input ng-model="user.lastName" type="text" placeholder="Last Name"/>
     <br>
     <input ng-model="user.email" type="email" placeholder="Email"/>
     <br>
-    <input type="submit" value="Add"/>
+    <div class="new-user-buttons">
+      <button type="button" ng-click="newuser.$valid && addUser(user)">Add</button>
+      <button type="button" ng-click="reset()">Cancel</button>
+    </div>
   </form>
 </div>
