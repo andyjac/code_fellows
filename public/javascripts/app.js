@@ -21,10 +21,7 @@
 
     $scope.beginEdit = function(index) {
       $scope.editingUser = true;
-      console.log('value of index: ', index);
-      console.log('$scope.index before setting it to index: ', $scope.index);
       $scope.index = index;
-      console.log('$scope.index after setting it to index: ', $scope.index);
       $scope.copy = angular.copy($scope.users[index]);
     };
 
