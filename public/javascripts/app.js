@@ -19,21 +19,23 @@
       $scope.users.splice(index, 1);
     };
 
+    $scope.showCurrentUserToEdit = function(index) {
+      return $scope.userToEdit === index;
+    };
+
     $scope.beginEdit = function(index) {
-      $scope.editingUser = true;
-      $scope.index = index;
+      $scope.userToEdit = index;
       $scope.copy = angular.copy($scope.users[index]);
     };
 
     $scope.commitEdit = function() {
-      $scope.users[$scope.index] = angular.copy($scope.copy);
+      $scope.users[$scope.userToEdit] = angular.copy($scope.copy);
       $scope.cancelEdit();
     };
 
     $scope.cancelEdit = function() {
       $scope.copy = null;
-      $scope.index = -1;
-      $scope.editingUser = false;
+      $scope.userToEdit = -1;
     };
   }]);
 

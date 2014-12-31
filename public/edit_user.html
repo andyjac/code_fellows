@@ -11,7 +11,7 @@
       <a class="remove btn" ng-click="removeUser($index)">Delete</a>
     </div>
   </div>
-  <form class="update-user" name="update" ng-show="editingUser">
+  <form class="update-user" name="update" ng-show="showCurrentUserToEdit($index)">
     <input ng-model="copy.firstName" type="text" placeholder="First Name" required/>
     <br>
     <input ng-model="copy.lastName" type="text" placeholder="Last Name"/>
