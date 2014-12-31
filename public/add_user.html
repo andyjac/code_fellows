@@ -1,13 +1,15 @@
-<div>
+<div class="create-user">
   <a class="btn" ng-click="addingUser = true">New User</a>
-  <form class="newUser" name="newUser" ng-show="addingUser" ng-submit="newUser.$valid && addUser(user)" novalidate>
-    <blockquote>
+  <div class="new-entry-container" ng-show="addingUser">
+    <div class="new-entry-preview">
       <b>First Name:</b> {{user.firstName}}
       <br>
       <b>Last Name:</b> {{user.lastName}}
       <br>
       <b>Email:</b> {{user.email}}
-    </blockquote>
+    </div>
+  </div>
+  <form class="new-user" name="newuser" ng-show="addingUser" ng-submit="newuser.$valid && addUser(user)" novalidate>
     <input ng-model="user.firstName" type="text" placeholder="First Name" required/>
     <br>
     <input ng-model="user.lastName" type="text" placeholder="Last Name"/>
