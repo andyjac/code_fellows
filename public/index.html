@@ -7,9 +7,9 @@
   <body ng-controller="AccountController as accountCtrl">
     <div class="container">
       <h1>Account Users</h1>
-      <div>
+      <div class="add-new-user">
         <add-user></add-user>
-      </div>
+      </div class="list-of-users">
       <div ng-repeat="user in users">
         <edit-user></edit-user>
       </div>
