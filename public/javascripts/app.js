@@ -5,9 +5,8 @@
     $scope.users = [];
 
     $scope.addUser = function(user) {
-      $scope.addingUser = false;
       $scope.users.unshift(user);
-      $scope.user = {};
+      $scope.reset();
     };
 
     $scope.reset = function() {
