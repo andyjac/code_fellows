@@ -4,7 +4,13 @@
   app.controller('AccountController', ['$scope', function($scope) {
     $scope.users = [];
 
+    $scope.beginAdd = function() {
+      $scope.cancelEdit();
+      $scope.addingUser = true;
+    };
+
     $scope.addUser = function(user) {
+      $scope.cancelEdit();
       $scope.users.unshift(user);
       $scope.reset();
     };
@@ -15,6 +21,7 @@
     };
 
     $scope.removeUser = function(index) {
+      $scope.cancelEdit();
       $scope.users.splice(index, 1);
     };
 
@@ -23,6 +30,7 @@
     };
 
     $scope.beginEdit = function(index) {
+      $scope.reset();
       $scope.userToEdit = index;
       $scope.copy = angular.copy($scope.users[index]);
     };
