@@ -12,10 +12,10 @@
     $scope.addUser = function(user) {
       $scope.cancelEdit();
       $scope.users.unshift(user);
-      $scope.reset();
+      $scope.cancelAdd();
     };
 
-    $scope.reset = function() {
+    $scope.cancelAdd = function() {
       $scope.addingUser = false;
       $scope.user = {};
     };
@@ -30,7 +30,7 @@
     };
 
     $scope.beginEdit = function(index) {
-      $scope.reset();
+      $scope.cancelAdd();
       $scope.userToEdit = index;
       $scope.copy = angular.copy($scope.users[index]);
     };
